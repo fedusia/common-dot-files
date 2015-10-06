@@ -2,3 +2,5 @@
   email = fedusia@gmail.com
   name = Dmitry S. Fedorov
 
+[push]
+	default = simple
