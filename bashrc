@@ -7,7 +7,7 @@ fi
 
 # User specific aliases and functions
 
-#Set 
+#Set prompt 
 export PS1="[\e[94m\u\033[0m@\e[92m\h\e[0m \e[33m\t\033[0m \e[96m\W\033[0m]$ "
 
 #Set environment for go installed from source
