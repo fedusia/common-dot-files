@@ -8,7 +8,8 @@ fi
 # User specific aliases and functions
 
 #Set prompt
-export PS1="\e[33m[\D{%d %b %T}]\033[0m \e[94m\u\033[0m@\e[92m\h\e[0m:\e[96m\W\033[0m$ "
+export PS1="\e[94m\u\033[0m@\e[92m\h\e[0m:\e[96m\w\033[0m$ "
+export PROMPT_DIRTRIM=3
 
 #Set environment for go installed from source
 export GOPATH=~/work/git/go
