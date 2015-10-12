@@ -4,3 +4,8 @@
 
 [push]
 	default = simple
+
+[alias]
+  lg = log --pretty=format:'%h -%d %s (%cr) <%an>' --abbrev-commit
+  st = status
+
