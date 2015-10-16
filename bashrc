@@ -8,7 +8,8 @@ fi
 # User specific aliases and functions
 
 #Set prompt
-export PS1="\e[94m\u\033[0m@\e[92m\h\e[0m:\e[96m\w\033[0m$ "
+export PS1="\[\033[0;94m\]\u\[\033[00m\]@\[\033[0;92m\]\h\[\033[00m\]:\[\033[0;96m\]\w\[\033[00m\]$ "
+
 export PROMPT_DIRTRIM=3
 
 #Set environment for go installed from source

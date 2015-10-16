@@ -8,4 +8,5 @@
 [alias]
   lg = log --pretty=format:'%h -%d %s (%cr) <%an>' --abbrev-commit
   st = status
-
+  co = checkout
+  cm = commit
