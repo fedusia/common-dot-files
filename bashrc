@@ -24,3 +24,7 @@ HISTSIZE=10000
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
+#Environment aliases
+alias svnenv='cd ~/work/svn/puppet-noginsk/trunk/var/lib/puppet/environments/'
+alias gitenv='cd ~/work/git/puppet-getting-started/env/'
+

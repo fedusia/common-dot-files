@@ -6,4 +6,3 @@ set expandtab
 set smarttab
 " Turn on color syntax highlighting
 syntax on
-
