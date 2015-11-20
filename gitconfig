@@ -10,3 +10,5 @@
   st = status
   co = checkout
   cm = commit
+[commit]
+	template = /home/fedusia/.gitmessage.txt
