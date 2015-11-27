@@ -14,7 +14,7 @@ parse_git_branch() {
 #Set prompt
 export PS1="\[\033[0;94m\]\u\[\033[00m\]@\[\033[0;92m\]\h\[\033[00m\]:\[\033[0;96m\]\w\[\033[00m\]\[\033[33m\]\$(parse_git_branch)\[\033[00m\]$"
 
-export PROMPT_DIRTRIM=3
+export PROMPT_DIRTRIM=2
 
 #Set environment for go installed from source
 export GOPATH=~/work/git/go
