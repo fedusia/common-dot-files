@@ -12,7 +12,7 @@ parse_git_branch() {
 }
 
 #Set prompt
-export PS1="\[\033[0;94m\]\u\[\033[00m\]@\[\033[0;92m\]\h\[\033[00m\]:\[\033[0;96m\]\w\[\033[00m\]\[\033[33m\]\$(parse_git_branch)\[\033[00m\]$"
+export PS1="`if [ $? = 0 ]; then echo "\[\033[01;32m\]✔"; else echo "\[\033[01;31m\]✘"; fi` \[\033[0;94m\]\u\[\033[00m\]@\[\033[0;92m\]\h\[\033[00m\]:\[\033[0;96m\]\w\[\033[00m\]\[\033[33m\]\$(parse_git_branch)\[\033[00m\]$"
 
 export PROMPT_DIRTRIM=3
 
