@@ -31,4 +31,5 @@ bind '"\e[B": history-search-forward'
 #Environment aliases
 alias svnenv='cd ~/work/svn/puppet-noginsk/trunk/var/lib/puppet/environments/'
 alias gitenv='cd ~/work/git/puppet-getting-started/env/'
+alias gitpreprod='cd ~/work/git/puppet-getting-started/hiera/hiera; git co master; git pull'
 

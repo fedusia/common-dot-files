@@ -1,9 +1,7 @@
-" Set tab lenght 2 blank
-set tabstop=2
-" Insert space characters whenever the tab key is pressed
-set expandtab
-
-set smarttab
-" Turn on color syntax highlighting
-syntax on
-
+set tabstop=2    " size of a hard tabstop
+set shiftwidth=2 " size of an "indent"
+set expandtab    " Always uses spaces instead of tab characters
+set smarttab     " make "tab" insert indents instead of tabs at the beginning of a line
+syntax on        " Turn on color syntax highlighting
+set number       " set number of line
+set nowrapscan   " prevent vim to search from start file when goes to end 
