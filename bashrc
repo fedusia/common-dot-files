@@ -21,7 +21,7 @@ export GOROOT=/usr/lib/golang
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
 # for setting history lenght
-HISTSIZE=10000
+HISTSIZE=50000
 
 # Bind arrows up/down for reverse search
 bind '"\e[A": history-search-backward'
