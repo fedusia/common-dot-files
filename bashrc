@@ -8,13 +8,32 @@ fi
 # User specific aliases and functions
 
 parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
+return_value_visualisation() {
+    exit_code=$?
+    if [ $exit_code == 0 ]
+    then
+        echo ";)"
+    else
+        echo ":("
+    fi
+}
+#highlight_exit_code()
+#{
+#    exit_code=$?
+#    if [ $exit_code -ne 0 ]
+#    then
+#        highlight_error "$exit_code "
+#    fi
+#}
 
+export PROMPT_COMMAND=return_value_visualisation
 #Set prompt
-export PS1="\[\033[0;94m\]\u\[\033[00m\]@\[\033[0;92m\]\h\[\033[00m\]:\[\033[0;96m\]\w\[\033[00m\]\[\033[33m\]\$(parse_git_branch)\[\033[00m\]$"
-export PROMPT_DIRTRIM=2
-
+#export PS1="$(return_value_visualisation)\[\033[00m\]:\[\033[0;96m\]\W\[\033[00m\]\[\033[33m\]\$(parse_git_branch)\[\033[00m\]$"
+##return value visualisation
+export PS1="$(return_value_visualisation):"
+#export PS1="\$? \$(if [[ \$? == 0 ]]; then echo \"\[\033[0;32m\];)\"; else echo \"\[\033[0;31m\];(\"; fi)\[\033[00m\] : "
 #Set environment for go installed from source
 export GOPATH=~/work/git/go
 export GOROOT=/usr/lib/golang
