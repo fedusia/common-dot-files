@@ -18,9 +18,9 @@ function __error_code__(){
   local EXIT="$?"
   PS1=""
   if [ $EXIT == 0 ]; then
-    PS1+="${GREEN}\342\234\224${RESET} "
+    PS1+=" ${GREEN}\342\234\224${RESET} "
   else
-    PS1+="${RED}\342\234\230${RESET} "
+    PS1+=" ${RED}\342\234\230${RESET} "
   fi
 }
 
