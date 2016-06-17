@@ -5,3 +5,4 @@ set smarttab     " make "tab" insert indents instead of tabs at the beginning of
 syntax on        " Turn on color syntax highlighting
 set number       " set number of line
 set nowrapscan   " prevent vim to search from start file when goes to end 
+set title        " Add title to terminal

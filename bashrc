@@ -42,7 +42,6 @@ function __my_prompt__(){
   __git_branch_name__
   __prompt__
 }
-
 export PROMPT_COMMAND=__my_prompt__
 
 export GOPATH=~/work/git/go

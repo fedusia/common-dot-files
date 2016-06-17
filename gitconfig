@@ -10,3 +10,5 @@
   st = status
   co = checkout
   cm = commit
+[diff]
+	tool = vimdiff
