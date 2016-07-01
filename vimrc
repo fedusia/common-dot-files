@@ -9,13 +9,13 @@ set nowrapscan                 " prevent vim to search from start file when goes
 set title                      " Add title to terminal
 
 set nocompatible
-filetype off  "обязательно!
+filetype off                   " necessarily!
 
 set rtp+=~/.vim/bundle/vundle/
 
 call vundle#rc()
 
-filetype plugin indent on     " обязательно!
+filetype plugin indent on      " necessarily!
 
-"репозитории на github
+"Reposittories from  github.com
 Plugin 'ctrlpvim/ctrlp.vim'
