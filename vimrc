@@ -19,3 +19,9 @@ filetype plugin indent on      " necessarily!
 
 "Reposittories from  github.com
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+
+" Bind to CTRL+M NERDTree.
+map <C-n> :NERDTreeToggle<CR>
+" Close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
