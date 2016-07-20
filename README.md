@@ -1,7 +1,8 @@
 # common-dot-files
 Installation:<br>
+mkdir ~/work<br>
+cd ~/work<br>
 git clone https://github.com/fedusia/common-dot-files.git <br>
-cd common-dot-files <br>
-for file in bashrc gitconfig vimrc; do
-    cp $file ~/.$file;
-done
+chmod +x ~/work/common-dot-files/install.py<br>
+sudo ~/work/common-dot-files/install.py<br>
+source ~/.bashrc<br>
