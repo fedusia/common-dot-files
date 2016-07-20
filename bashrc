@@ -18,9 +18,9 @@ function __error_code__(){
   local EXIT="$?"
   PS1=""
   if [ $EXIT == 0 ]; then
-    PS1+=" ${GREEN}\342\234\224${RESET} "
+    PS1+=" ${GREEN}\342\234\224 [$EXIT]${RESET} "
   else
-    PS1+=" ${RED}\342\234\230${RESET} "
+    PS1+=" ${RED}\342\234\230 [$EXIT]${RESET} "
   fi
 }
 
@@ -42,11 +42,19 @@ function __my_prompt__(){
   __git_branch_name__
   __prompt__
 }
+
+# My prompt
 export PROMPT_COMMAND=__my_prompt__
 
+# Set go environment
 export GOPATH=~/work/git/go
 export GOROOT=/usr/lib/golang
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
+
+# Set default editor to vim
+export EDITOR=`which vim`
+export DEBFULLNAME="Dmitry S. Fedorov"
+export DEBEMAIL="fedusia@yandex-team.ru"
 
 # for setting history lenght
 HISTSIZE=50000
@@ -56,7 +64,5 @@ bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
 # Define aliaces
-alias svnenv='cd ~/work/svn/puppet-noginsk/trunk/var/lib/puppet/environments/'
-alias gitenv='cd ~/work/git/puppet-getting-started/env/'
-alias gitpreprod='cd ~/work/git/puppet-getting-started/hiera/hiera; git co master; git pull'
-
+alias ll='ls -l'
+alias dch='dch --distributor=debian'

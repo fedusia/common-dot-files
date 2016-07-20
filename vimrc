@@ -1,7 +1,8 @@
 " Base settings:
-set tabstop=2                  " size of a hard tabstop
-set shiftwidth=2               " size of an "indent"
-set expandtab                  " Always uses spaces instead of tab characters
+set tabstop=8                  " size of a hard tabstop
+set shiftwidth=4               " size of an "indent"
+set softtabstop=4
+set expandtab                  " Always replace tabs with spaces
 set smarttab                   " make "tab" insert indents instead of tabs at the beginning of a line
 syntax on                      " Turn on color syntax highlighting
 set number                     " set number of line
