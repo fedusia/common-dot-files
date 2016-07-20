@@ -2,12 +2,11 @@
 
 import os
 import subprocess
-def distName():
-    return os.uname()[0]
 
 
 def main():
-    if distName() == 'Linux':
+    distName = os.name()[0]
+    if distName == 'Linux':
         retval = subprocess.call(['which', 'git'])
         print(retval)
 
