@@ -1,63 +1,63 @@
 set nocompatible
-filetype off                           " necessarily!
+filetype off                            " necessarily!
 
 "=====================================================
 " Vundle settings
 "=====================================================
 " set the runtime path to include Vundle and initialize
 
-set rtp+=~/.vim/bundle/Vundle.vim/     " Set the runtime path to include Vundle
+set rtp+=~/.vim/bundle/Vundle.vim/      " Set the runtime path to include Vundle
 
-call vundle#begin()                    " Initialize vundle
+call vundle#begin()                     " Initialize vundle
 
 
 
 ""------------------=== Code/project navigation ===-------------
-Plugin 'scrooloose/nerdtree'           " Project and file navigation
-Plugin 'majutsushi/tagbar'             " Class/module browser
-Plugin 'ctrlpvim/ctrlp.vim'            " Ctrl+p plugin
+Plugin 'scrooloose/nerdtree'            " Project and file navigation
+Plugin 'majutsushi/tagbar'              " Class/module browser
+Plugin 'ctrlpvim/ctrlp.vim'             " Ctrl+p plugin
 
 ""------------------=== Other ===-------------------------------
-Plugin 'bling/vim-airline'             " Lean & mean status/tabline for vim
-Plugin 'fisadev/FixedTaskList.vim'     " Pending tasks list
-Plugin 'rosenfeld/conque-term'         " Consoles as buffers
-Plugin 'tpope/vim-surround'            " Parentheses, brackets, quotes, XML tags, and more
+Plugin 'vim-airline/vim-airline-themes' " Lean & mean status/tabline for vim
+Plugin 'fisadev/FixedTaskList.vim'      " Pending tasks list
+Plugin 'rosenfeld/conque-term'          " Consoles as buffers
+Plugin 'tpope/vim-surround'             " Parentheses, brackets, quotes, XML tags, and more
 
 ""------------------=== Snippets support ===--------------------
-Plugin 'garbas/vim-snipmate'           " Snippets manager
-Plugin 'MarcWeber/vim-addon-mw-utils'  " dependencies #1
-Plugin 'tomtom/tlib_vim'               " dependencies #2
-Plugin 'honza/vim-snippets'            " snippets repo
+Plugin 'garbas/vim-snipmate'            " Snippets manager
+Plugin 'MarcWeber/vim-addon-mw-utils'   " dependencies #1
+Plugin 'tomtom/tlib_vim'                " dependencies #2
+Plugin 'honza/vim-snippets'             " snippets repo
 
 
 "---------------=== Languages support ===-------------
 "" --- Python ---
-Plugin 'klen/python-mode'              " Python mode (docs, refactor, lints, highlighting, run and ipdb and more)
-Plugin 'davidhalter/jedi-vim'          " Jedi-vim autocomplete plugin
-Plugin 'mitsuhiko/vim-jinja'           " Jinja support for vim
-Plugin 'mitsuhiko/vim-python-combined' " Combined Python 2/3 for Vim
+Plugin 'klen/python-mode'               " Python mode (docs, refactor, lints, highlighting, run and ipdb and more)
+Plugin 'davidhalter/jedi-vim'           " Jedi-vim autocomplete plugin
+Plugin 'mitsuhiko/vim-jinja'            " Jinja support for vim
+Plugin 'mitsuhiko/vim-python-combined'  " Combined Python 2/3 for Vim
 
-call vundle#end()                      " End of initialization vundle 
+call vundle#end()                       " End of initialization vundle 
 
 
 filetype on
 filetype plugin on
-filetype plugin indent on              " necessarily!
+filetype plugin indent on               " necessarily!
 
 
 "=====================================================
 "" General settings
 "=====================================================
-set tabstop=8                          " size of a hard tabstop
-set shiftwidth=4                       " size of an "indent"
+set tabstop=8                           " size of a hard tabstop
+set shiftwidth=4                        " size of an "indent"
 set softtabstop=4
-set expandtab                          " Always replace tabs with spaces
-set smarttab                           " make "tab" insert indents instead of tabs at the beginning of a line
-syntax on                              " Turn on color syntax highlighting
-set number                             " set number of line
-set nowrapscan                         " prevent vim to search from start file when goes to end 
-set title                              " Add title to terminal
-set ls=2                               " Show line status
+set expandtab                           " Always replace tabs with spaces
+set smarttab                            " make "tab" insert indents instead of tabs at the beginning of a line
+syntax on                               " Turn on color syntax highlighting
+set number                              " set number of line
+set nowrapscan                          " prevent vim to search from start file when goes to end 
+set title                               " Add title to terminal
+set ls=2                                " Show line status
 
 "  при переходе за границу в 80 символов в Ruby/Python/js/C/C++ подсвечиваем
 "  на темном фоне текст
