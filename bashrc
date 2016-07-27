@@ -53,7 +53,7 @@ export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
 # Set default editor to vim
 export EDITOR=`which vim`
-export DEBFULLNAME="Dmitry S. Fedorov"
+export DEBFULLNAME="Dmitry Fedorov"
 export DEBEMAIL="fedusia@yandex-team.ru"
 
 # for setting history lenght

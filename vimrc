@@ -1,5 +1,5 @@
 set nocompatible
-filetype off                            " necessarily!
+filetype off                            " required!
 
 "=====================================================
 " Vundle settings
@@ -42,7 +42,7 @@ call vundle#end()                       " End of initialization vundle
 
 filetype on
 filetype plugin on
-filetype plugin indent on               " necessarily!
+filetype plugin indent on               " required!
 
 
 "=====================================================
@@ -86,15 +86,20 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
-"=====================================================
-"" User hotkeys
-"=====================================================
-"" ConqueTerm
-" запуск интерпретатора на F5
-nnoremap <F5> :ConqueTermSplit ipython<CR>
+"Key mappings / bindings {
+    " ConqueTerm
+    " запуск интерпретатора на F5
+    nnoremap <F5> :ConqueTermSplit ipython<CR>
 
-" Bind to F3 to open NERDTree.
-map <F3> :NERDTreeToggle<CR>
+    " Bind to F3 to open NERDTree.
+    map <F3> :NERDTreeToggle<CR>
 
-" автокомплит через <Ctrl+Space>
-inoremap <C-space> <C-x><C-o>
+    " автокомплит через <Ctrl+Space>
+    inoremap <C-space> <C-x><C-o>
+    let mapleader=","
+    " no more up left rihgt down keys. hjkl motherfucker.
+    map <up> <nop>
+    map <down> <nop>
+    map <left> <nop>
+    map <right> <nop>
+"}
