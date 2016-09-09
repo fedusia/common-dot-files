@@ -37,6 +37,8 @@ Plugin 'davidhalter/jedi-vim'           " Jedi-vim autocomplete plugin
 Plugin 'mitsuhiko/vim-jinja'            " Jinja support for vim
 Plugin 'mitsuhiko/vim-python-combined'  " Combined Python 2/3 for Vim
 
+"" --- Golang ---
+Plugin 'fatih/vim-go'
 call vundle#end()                       " End of initialization vundle 
 
 

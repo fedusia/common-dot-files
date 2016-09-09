@@ -48,7 +48,7 @@ export PROMPT_COMMAND=__my_prompt__
 
 # Set go environment
 export GOPATH=~/work/git/go
-export GOROOT=/usr/lib/golang
+export GOROOT=/usr/lib/go
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
 # Set default editor to vim

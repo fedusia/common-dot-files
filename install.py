@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 
+import platform
 import os
 import subprocess
 
 
 def main():
-    distName = os.name()[0]
-    if distName == 'Linux':
+    distName = platform.dist()[0]
+    if distName == 'Ubuntu':
         retval = subprocess.call(['which', 'git'])
         print(retval)
 
