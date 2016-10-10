@@ -60,6 +60,7 @@ set number                              " set number of line
 set nowrapscan                          " prevent vim to search from start file when goes to end 
 set title                               " Add title to terminal
 set ls=2                                " Show line status
+set hlsearch                            " Highlight matches in search
 
 "  при переходе за границу в 80 символов в Ruby/Python/js/C/C++ подсвечиваем
 "  на темном фоне текст
