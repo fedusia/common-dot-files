@@ -101,8 +101,4 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
     inoremap <C-space> <C-x><C-o>
     let mapleader=","
     " no more up left rihgt down keys. hjkl motherfucker.
-    map <up> <nop>
-    map <down> <nop>
-    map <left> <nop>
-    map <right> <nop>
 "}

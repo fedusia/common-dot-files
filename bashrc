@@ -56,6 +56,9 @@ export EDITOR=`which vim`
 export DEBFULLNAME="Dmitry Fedorov"
 export DEBEMAIL="fedusia@yandex-team.ru"
 
+# set default pager for manual
+export MANPAGER=`which most`
+
 # for setting history lenght
 HISTSIZE=50000
 
