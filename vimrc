@@ -71,12 +71,15 @@ augroup vimrc_autocmds
     autocmd FileType ruby,python,javascript,c,cpp set nowrap
 augroup END
 
+" highlight unwanted spaces
+match Error /\s\+$/
+
 " Path to snippets dir
 let g:snippets_dir = "~/.vim/vim-snippets/snippets"
 
 " -------=== Settings for NERDTre ===-----------
 " Ignore files with etensions:
-let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']  
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
 
 " Close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

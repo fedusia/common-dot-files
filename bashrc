@@ -69,3 +69,4 @@ bind '"\e[B": history-search-forward'
 # Define aliaces
 alias ll='ls -l'
 alias dch='dch --distributor=debian'
+alias docker='sudo docker'
