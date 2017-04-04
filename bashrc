@@ -69,6 +69,7 @@ bind '"\e[B": history-search-forward'
 # Define aliaces
 alias ll='ls -l'
 alias dch='dch --distributor=debian'
+alias docker='sudo docker'
 
 # Setting PATH for Python 3.6
 # The original version is saved in .bash_profile.pysave
