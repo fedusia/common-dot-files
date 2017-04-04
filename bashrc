@@ -69,3 +69,11 @@ bind '"\e[B": history-search-forward'
 # Define aliaces
 alias ll='ls -l'
 alias dch='dch --distributor=debian'
+
+# Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+if [[ $(uname -s) == 'Darwin' ]]; then
+    PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+fi
+
+export PATH
