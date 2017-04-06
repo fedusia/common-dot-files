@@ -1,0 +1,59 @@
+#!/usr/bin/env python3
+
+import subprocess
+import os
+import sys
+
+
+REPO_PATH = '/home/fedusia/salt'
+YMLLINT_CONF = REPO_PATH + '/.git/hooks/yamllint.cfg'
+
+
+def init_hook():
+    """ This function generates config file for yamllint """
+    raise NotImplementedError
+
+
+def get_precommited_files(repo_path):
+    """
+    This function return files which was added to git index for commit
+    :param repo_path:
+    :return list of precommited files:
+    """
+    os.chdir(repo_path)
+    files = subprocess.check_output(['git', 'diff', '--name-only', '--staged']).decode('utf-8')
+    files = files.split('\n')
+    # print(files)
+    return files
+
+
+def run_checks(files):
+    """
+    This function do specific check on changed files like pylint, ymllint, etc
+    :param files:
+    :return error:
+    """
+    error = None
+    for file in files:
+        if file.endswith('.yml'):
+            try:
+                subprocess.check_output(['yamllint', '-c', YMLLINT_CONF, file],
+                                        stderr=subprocess.STDOUT)
+            except subprocess.CalledProcessError as err:
+                print(err.output.decode('utf-8'))
+                error = err.returncode
+        # if file.endswith('.py'):
+        #    subprocess.call(['pylint'])
+        if error is not None:
+            return error
+    return 0
+
+
+def main():
+    files = get_precommited_files(REPO_PATH)
+    if run_checks(files):
+        sys.exit(1)
+
+if __name__ == '__main__':
+    main()
+
