@@ -21,7 +21,7 @@ def get_precommited_files(repo_path):
     :return list of precommited files:
     """
     os.chdir(repo_path)
-    files = subprocess.check_output(['git', 'diff', '--name-only', '--staged']).decode('utf-8')
+    files = subprocess.check_output(['git', 'diff', '--name-only', '--staged', '--diff-filter=ACMRTUXB']).decode('utf-8')
     files = files.split('\n')
     # print(files)
     return files
