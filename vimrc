@@ -74,6 +74,9 @@ augroup END
 " highlight unwanted spaces
 match Error /\s\+$/
 
+autocmd BufWritePre * %s/\s\+$//e
+autocmd BufWritePre * %s/^\s\+$//e
+
 " Path to snippets dir
 let g:snippets_dir = "~/.vim/vim-snippets/snippets"
 
