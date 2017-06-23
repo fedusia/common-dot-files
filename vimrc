@@ -39,7 +39,7 @@ Plugin 'mitsuhiko/vim-python-combined'  " Combined Python 2/3 for Vim
 
 "" --- Golang ---
 Plugin 'fatih/vim-go'
-call vundle#end()                       " End of initialization vundle 
+call vundle#end()                       " End of initialization vundle
 
 
 filetype on
@@ -57,7 +57,7 @@ set expandtab                           " Always replace tabs with spaces
 set smarttab                            " make "tab" insert indents instead of tabs at the beginning of a line
 syntax on                               " Turn on color syntax highlighting
 set number                              " set number of line
-set nowrapscan                          " prevent vim to search from start file when goes to end 
+set nowrapscan                          " prevent vim to search from start file when goes to end
 set title                               " Add title to terminal
 set ls=2                                " Show line status
 set hlsearch                            " Highlight matches in search
@@ -74,8 +74,9 @@ augroup END
 " highlight unwanted spaces
 match Error /\s\+$/
 
-autocmd BufWritePre * %s/\s\+$//e
-autocmd BufWritePre * %s/^\s\+$//e
+" Remove unwanted spaces
+" autocmd BufWritePre * %s/\s\+$//e
+" autocmd BufWritePre * %s/^\s\+$//e
 
 " Path to snippets dir
 let g:snippets_dir = "~/.vim/vim-snippets/snippets"
