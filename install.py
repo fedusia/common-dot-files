@@ -31,9 +31,8 @@ def main():
         os.chdir(env_dir)
         os.makedirs('src/github.com', exist_ok=True)
         try:
-            subprocess.check_call(['git', 'clone', REPO, './src/github.com/fedusia/common-dot-files'])
+            subprocess.run(['git', 'clone', REPO, './src/github.com/fedusia/common-dot-files'])
         except subprocess.CalledProcessError as err:
-            print('hello')
             print(err)
         for file in ENV_FILES:
             if get_osname() == 'Darwin' and file == 'bashrc':
