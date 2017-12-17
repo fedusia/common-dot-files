@@ -36,8 +36,15 @@ function __prompt__(){
   PS1+="$ "
 }
 
+function __virtualenv_name__(){
+  if [[ -n $VIRTUAL_ENV ]]; then
+      PS1+="${RED}venv:($(basename $VIRTUAL_ENV))${RESET} "
+  fi
+}
+
 function __my_prompt__(){
   __error_code__
+  __virtualenv_name__
   __working_dir__
   __git_branch_name__
   __prompt__
@@ -47,8 +54,8 @@ function __my_prompt__(){
 export PROMPT_COMMAND=__my_prompt__
 
 # Set go environment
-export GOPATH=~/work/git/go
-export GOROOT=/usr/lib/go
+export GOPATH=~/work
+export GOROOT=/usr/local/go
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
 # Set default editor to vim
