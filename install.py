@@ -3,6 +3,7 @@
 Bootstrap script 
 """
 import argparse
+import configparser
 import os
 import subprocess
 
@@ -10,8 +11,8 @@ import subprocess
 REPO_URL = "https://github.com/fedusia/common-dot-files"
 
 ROOT_WORKING_DIR = "work"
-SUBDIRS = ["src", "venvs", "tmp", "bin", "stands", "terraform"]
-ENV_FILES = ["bash_profile", "gitconfig", "tmux.conf", "vimrc"]
+SUBDIRS = ("src", "venvs", "tmp", "bin", "stands", "terraform")
+ENV_FILES = ("bash_profile", "gitconfig", "tmux.conf", "vimrc")
 
 
 def get_root_working_dir():
@@ -122,6 +123,10 @@ def configure_vim():
             "mypy",
         ]
     )
+    pylintrc = configparser.ConfigParser()
+    pylintrc["FORMAT"] = {"max-line-length": 120}
+    with open(os.path.join(home_path, ".pylintrc"), "w") as pylint_config:
+        pylintrc.write(pylint_config)
 
 
 def parse_args():

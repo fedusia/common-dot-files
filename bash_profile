@@ -32,6 +32,10 @@ function __git_branch_name__() {
   PS1+="${ORANGE}$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/')${RESET}"
 }
 
+function __arc_branch_name__() {
+  PS1+="${ORANGE}$(arc branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/')${RESET}"
+}
+
 function __prompt__(){
   PS1+="$ "
 }
@@ -47,6 +51,7 @@ function __my_prompt__(){
   __virtualenv_name__
   __working_dir__
   __git_branch_name__
+  __arc_branch_name__
   __prompt__
 }
 
