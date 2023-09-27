@@ -67,7 +67,7 @@ export DEBEMAIL="fedusia@yandex-team.ru"
 export MANPAGER=`which most`
 
 # for setting history lenght
-HISTSIZE=50000
+HISTSIZE=500000
 
 # Bind arrows up/down for reverse search
 bind '"\e[A": history-search-backward'
@@ -81,6 +81,11 @@ alias dch='dch --distributor=debian'
 # The original version is saved in .bash_profile.pysave
 if [[ $(uname -s) == 'Darwin' ]]; then
     PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+fi
+
+# Setting PATH to use binaries from brew
+if [ -x "/opt/homebrew/bin/brew" ]; then
+    PATH="/opt/homebrew/bin/:${PATH}"
 fi
 
 export PATH
