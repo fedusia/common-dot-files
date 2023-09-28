@@ -83,6 +83,7 @@ bind '"\e\e[D": backward-word'
 # Define common aliaces
 alias ll='ls -l'
 alias dch='dch --distributor=debian'
+alias amr='cd ~/work/src/a.yandex-team.ru/cloud/mdb'
 
 # Setting PATH to use binaries from brew
 if [ -x "/opt/homebrew/bin/brew" ]; then
