@@ -77,20 +77,24 @@ HISTSIZE=500000
 # Bind arrows up/down for reverse search
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
+bind '"\e\e[C": forward-word'
+bind '"\e\e[D": backward-word'
 
 # Define common aliaces
 alias ll='ls -l'
 alias dch='dch --distributor=debian'
 
-# Setting PATH for Python 3.6
-# The original version is saved in .bash_profile.pysave
-if [[ $(uname -s) == 'Darwin' ]]; then
-    PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
-fi
-
 # Setting PATH to use binaries from brew
 if [ -x "/opt/homebrew/bin/brew" ]; then
     PATH="/opt/homebrew/bin/:${PATH}"
 fi
+PATH=$PATH:~/work/src/a.yandex-team.ru/
+
 
 export PATH
+
+# The next line updates PATH for mdb cli tools.
+if [ -f '/Users/fedusia/work/src/bin/path.bash.inc' ]; then source '/Users/fedusia/work/src/bin/path.bash.inc'; fi
+
+# The next line enables shell command completion for mdb cli tools.
+if [ -f '/Users/fedusia/work/src/bin/completion.bash.inc' ]; then source '/Users/fedusia/work/src/bin/completion.bash.inc'; fi
