@@ -31,7 +31,7 @@ Plugin 'vim-airline/vim-airline-themes'
 "---------------=== Languages support ===-------------
 " --- Python ---
 "Plugin 'klen/python-mode'	        " Python mode (docs, refactor, lints, highlighting, run and ipdb and more)
-"Plugin 'davidhalter/jedi-vim' 		" Jedi-vim autocomplete plugin
+Plugin 'davidhalter/jedi-vim' 		" Jedi-vim autocomplete plugin
 "Plugin 'mitsuhiko/vim-jinja'		" Jinja support for vim
 "Plugin 'mitsuhiko/vim-python-combined'  " Combined Python 2/3 for Vim
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
@@ -92,8 +92,15 @@ let g:pymode_lint_options_pep8 = {'max_line_length': g:pymode_options_max_line_l
 let g:pymode_lint_options_pylint = {'max-line-length': g:pymode_options_max_line_length}
 let g:pymode_lint_options_pyflakes = { 'builtins': '_' }
 let g:ale_python_flake8_options = '--max-line-length=120'
-let g:ale_fixers = {'python': ['isort'],}
-let g:ale_fix_on_save = 0
+let g:ale_fixers = {'python': ['isort', 'black'],}
+let g:ale_fix_on_save = 1
+
+highlight PmenuSel ctermbg=yellow guibg=yellow
+" Pmenu – normal item
+" PmenuSel – selected item
+" PmenuSbar – scrollbar
+" PmenuThumb – thumb of the scrollbar
+
 
 
 set expandtab
