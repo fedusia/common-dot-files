@@ -95,7 +95,7 @@ PATH=$PATH:~/work/src/a.yandex-team.ru/
 export PATH
 
 # The next line updates PATH for mdb cli tools.
-if [ -f '/Users/fedusia/work/src/bin/path.bash.inc' ]; then source '/Users/fedusia/work/src/bin/path.bash.inc'; fi
+if [ -f '/Users/fedusia/work/bin/path.bash.inc' ]; then source '/Users/fedusia/work/bin/path.bash.inc'; fi
 
 # The next line enables shell command completion for mdb cli tools.
-if [ -f '/Users/fedusia/work/src/bin/completion.bash.inc' ]; then source '/Users/fedusia/work/src/bin/completion.bash.inc'; fi
+if [ -f '/Users/fedusia/work/bin/completion.bash.inc' ]; then source '/Users/fedusia/work/bin/completion.bash.inc'; fi

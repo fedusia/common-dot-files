@@ -56,8 +56,6 @@ filetype on
 filetype plugin on
 filetype plugin indent on
 
-"let g:snipMate = { 'snippet_version' : 1 }
-
 
 " Tturn on syntax highlight
 syntax on
@@ -92,8 +90,8 @@ let g:pymode_lint_options_pep8 = {'max_line_length': g:pymode_options_max_line_l
 let g:pymode_lint_options_pylint = {'max-line-length': g:pymode_options_max_line_length}
 let g:pymode_lint_options_pyflakes = { 'builtins': '_' }
 let g:ale_python_flake8_options = '--max-line-length=120'
-let g:ale_fixers = {'python': ['isort', 'black'],}
-let g:ale_fix_on_save = 1
+"let g:ale_fixers = {'python': ['isort', 'black'],}
+"let g:ale_fix_on_save = 1
 
 highlight PmenuSel ctermbg=yellow guibg=yellow
 " Pmenu – normal item
