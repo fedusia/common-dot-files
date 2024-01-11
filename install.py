@@ -59,9 +59,7 @@ def clone_repo(repo=REPO_URL):
     repo = repo.split("/")
     print(repo)
     repo_site, repo_name = repo[2], repo[4]
-    site_path = os.path.join(
-        os.path.expanduser("~"), ROOT_WORKING_DIR, "src", repo_site
-    )
+    site_path = os.path.join(os.path.expanduser("~"), ROOT_WORKING_DIR, "src", repo_site)
     full_repo_path = os.path.join(site_path, repo_name)
     if not os.path.exists(site_path):
         print(f"{site_path }Path does not exist. Creating it")
@@ -75,9 +73,7 @@ def clone_repo(repo=REPO_URL):
 def create_links_to_common_files_if_not_exist(recreate=False):
     root_working_path = get_root_working_dir()
     for common_file in ENV_FILES:
-        src_path = os.path.join(
-            root_working_path, "src", "github.com", "common-dot-files", common_file
-        )
+        src_path = os.path.join(root_working_path, "src", "github.com", "common-dot-files", common_file)
         dst_path = os.path.join(os.path.expanduser("~"), f".{common_file}")
         print(src_path)
         if not os.path.islink(dst_path):
@@ -129,6 +125,24 @@ def configure_vim():
         pylintrc.write(pylint_config)
 
 
+def install_vim_fonts():
+    home_path = os.path.expanduser("~")
+    fonts_path = "work/github.com/fonts"
+    if not os.path.exists(os.path.join(home_path, fonts_path)):
+        print("Installing fonts")
+        cmd = f"git clone https://github.com/powerline/fonts {home_path}/{fonts_path}"
+        subprocess.run(cmd.split())
+
+    print(
+        """
+          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+          !!!!!!!!!!!  You should manually change font to one of just installed.  !!!!!!!!!!!!!!!!!!!!
+          !!!!!!!!!!!  Open iTerm2->Profiles->Edit Profile->Text->Fonts           !!!!!!!!!!!!!!!!!!!!
+          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+          """
+    )
+
+
 def parse_args():
     parser = argparse.ArgumentParser(description="simple environment configuration")
     parser.add_argument(
@@ -149,6 +163,7 @@ def main():
     clone_repo(REPO_URL)
     create_links_to_common_files_if_not_exist(args.force)
     install_vim()
+    install_vim_fonts()
     configure_vim()
 
 

@@ -34,9 +34,6 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'davidhalter/jedi-vim' 		" Jedi-vim autocomplete plugin
 "Plugin 'mitsuhiko/vim-jinja'		" Jinja support for vim
 "Plugin 'mitsuhiko/vim-python-combined'  " Combined Python 2/3 for Vim
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-
-
 
 " linting
 Plugin 'dense-analysis/ale'
