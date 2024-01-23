@@ -7,12 +7,15 @@ import configparser
 import os
 import subprocess
 
+from collections.abc import Iterable
+
 
 REPO_URL = "https://github.com/fedusia/common-dot-files"
 
 ROOT_WORKING_DIR = "work"
 SUBDIRS = ("src", "venvs", "tmp", "bin", "stands", "terraform")
 ENV_FILES = ("bash_profile", "gitconfig", "tmux.conf", "vimrc")
+DEFAULT_PACKAGES = ("pyenv", "pyenv-virtualenv")
 
 
 def get_root_working_dir():
@@ -87,9 +90,12 @@ def create_links_to_common_files_if_not_exist(recreate=False):
             os.symlink(src_path, dst_path)
 
 
-def install_vim():
+def install_packages(pkgs):
+    if isinstance(pkgs, Iterable) is False:
+        pkgs = [pkgs]
     # TODO: add check if already installed
-    subprocess.run(["brew", "install", "vim"])
+    for pkg in pkgs:
+        subprocess.run(["brew", "install", pkg])
 
 
 def configure_vim():
@@ -162,9 +168,10 @@ def main():
     update_brew()
     clone_repo(REPO_URL)
     create_links_to_common_files_if_not_exist(args.force)
-    install_vim()
+    install_packages("vim")
     install_vim_fonts()
     configure_vim()
+    install_packages(DEFAULT_PACKAGES)
 
 
 if __name__ == "__main__":
