@@ -15,7 +15,7 @@ REPO_URL = "https://github.com/fedusia/common-dot-files"
 ROOT_WORKING_DIR = "work"
 SUBDIRS = ("src", "venvs", "tmp", "bin", "stands", "terraform")
 ENV_FILES = ("bash_profile", "gitconfig", "tmux.conf", "vimrc")
-DEFAULT_PACKAGES = ("pyenv", "pyenv-virtualenv")
+DEFAULT_PACKAGES = ("pyenv", "pyenv-virtualenv", "imagemagick")
 
 
 def get_root_working_dir():
