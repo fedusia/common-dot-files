@@ -32,6 +32,9 @@ def create_working_tree(root_working_dir=ROOT_WORKING_DIR, subdirs=SUBDIRS):
 
 
 def install_brew_if_not_exists():
+    if not os.uname().sysname == "Darwin":
+        print('Not Darwing, Skip installing brew')
+        return
     brew_install_file = "brew_install.sh"
     if os.path.exists("/opt/homebrew/bin/brew"):
         print("brew already installed. Skipping installation")
@@ -54,6 +57,8 @@ def install_brew_if_not_exists():
 
 
 def update_brew():
+    if os.uname().sysname == 'Linux':
+        return
     print("Updating brew")
     subprocess.run(["brew", "update"])
 
@@ -93,9 +98,14 @@ def create_links_to_common_files_if_not_exist(recreate=False):
 def install_packages(pkgs):
     if isinstance(pkgs, Iterable) is False:
         pkgs = [pkgs]
-    # TODO: add check if already installed
-    for pkg in pkgs:
-        subprocess.run(["brew", "install", pkg])
+    if os.uname().sysname == 'Linux':
+        for pkg in pkgs:
+            subprocess.run(["apt-get", "install", pkg])
+
+    else:
+        # TODO: add check if already installed
+        for pkg in pkgs:
+            subprocess.run(["brew", "install", pkg])
 
 
 def configure_vim():
@@ -114,7 +124,7 @@ def configure_vim():
         )
         subprocess.run(["vim", "+PluginInstall", "+qall"])
     if not os.path.exists(os.path.join(home_path, "work", "venvs", "vim")):
-        subprocess.run(["virtualenv", os.path.join(home_path, "work", "venvs", "vim")])
+        subprocess.run(["virtualenv", "-p", "python3", os.path.join(home_path, "work", "venvs", "vim")])
     subprocess.run(
         [
             os.path.join(home_path, "work", "venvs", "vim", "bin", "pip3"),
